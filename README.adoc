@@ -1,0 +1,46 @@
+= Testatoo Starter
+
+[.left.text-left]
+image::https://github.com/Ovea/testatoo/blob/master/src/doc/images/logo.jpg[]
+
+== Building
+
+==== Java 1.7+
+
+You need version **1.7** and more **(1.8 ...)** of the Java JDK installed
+
+    $ java -version
+    java version "1.8.0_25"
+    Java(TM) SE Runtime Environment (build 1.8.0_25-b17)
+    Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)
+    
+==== Maven
+
+Follow the instructions http://maven.apache.org/download.cgi#Installation["Maven Installation Instructions"]
+
+    $ mvn --version  
+    Apache Maven 3.0.5
+    Maven home: /usr/share/maven
+    Java version: 1.8.0_25, vendor: Oracle Corporation
+    Java home: /usr/lib/jvm/java-8-oracle/jre
+    Default locale: en_US, platform encoding: UTF-8
+    OS name: "linux", version: "3.16.0-24-generic", arch: "amd64", family: "unix"
+    
+=== Installation Steps
+
+    $ cd /wherever
+    $ git clone https://github.com/Ovea/testatoo-starter
+    $ cd testatoo-starter
+
+In your original Terminal
+
+    $ cd mvn test
+
+==== Testatoo Quick Overview
+
+TODO
+
+    
+
+    
+    
