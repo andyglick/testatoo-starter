@@ -16,22 +16,27 @@
 package starter
 
 import org.junit.AfterClass
-import org.junit.BeforeClass
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+
 import org.junit.runners.JUnit4
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.testatoo.bundle.html5.Button
 import org.testatoo.bundle.html5.input.TextField
 import org.testatoo.core.evaluator.webdriver.WebDriverEvaluator
-import org.testatoo.core.input.Mouse
 import starter.component.GoogleItem
 import starter.component.GoogleListView
 
 import static org.testatoo.core.Testatoo.*
-import static org.testatoo.core.action.Actions.*
-import static org.testatoo.core.state.States.*
-import static starter.component.property.Properties.*
+import static org.testatoo.core.action.Actions.fill
+import static org.testatoo.core.action.Actions.visit
+import static org.testatoo.core.input.Mouse.click_on
+import static org.testatoo.core.property.Properties.getTitle
+import static org.testatoo.core.state.States.getMissing
+import static org.testatoo.core.state.States.getVisible
+import static starter.component.property.Properties.getDescription
+import static starter.component.property.Properties.getUrl
 
 /**
  * @author David Avenante (d.avenante@gmail.com)
@@ -43,11 +48,14 @@ class GoogleSearchTest {
     static Button searchButton
     static GoogleListView resultList
 
-    @BeforeClass
-    public static void setup() {
+    @Before
+    public void setup() {
         evaluator = new WebDriverEvaluator(new FirefoxDriver())
         visit 'http://www.google.ca'
-        init()
+
+        searchField = $('#lst-ib') as TextField
+        searchButton = $('#sblsbb button') as Button
+        resultList = $('#rso') as GoogleListView
     }
 
     @AfterClass
@@ -59,7 +67,7 @@ class GoogleSearchTest {
         searchField.should { be visible }
 
         fill searchField with 'groovy'
-        Mouse.click_on searchButton
+        click_on searchButton
 
         resultList.should { be visible }
 
@@ -69,11 +77,5 @@ class GoogleSearchTest {
             have url.containing('www.groovy-lang.org')
             have description.containing('Groovy is a powerful, optionally typed and dynamic language')
         }
-    }
-
-    private static void init() {
-        searchField = $('#lst-ib') as TextField
-        searchButton = $('#sblsbb button') as Button
-        resultList = $('#rso') as GoogleListView
     }
 }

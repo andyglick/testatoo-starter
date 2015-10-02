@@ -38,7 +38,79 @@ In your original Terminal
 
 ==== Testatoo Quick Overview
 
-TODO
+The quick starter aims to a simple sample of the power of Testatoo.
+The object is to test the Google search page.
+
+You can run the test class: *GoogleSearchTest*
+
+After the end of the test we can take a look under the hood.
+
+First, has you can see, Testatoo run with standard Test Runner like **JUnit**.
+
+[source,java]
+-------------------------------------------------------------------------------
+@RunWith(JUnit4)
+class GoogleSearchTest {
+    ...
+}
+-------------------------------------------------------------------------------
+
+To initialise Testatoo you just need to give us a WebDriver instance.
+
+[source,java]
+-------------------------------------------------------------------------------
+@Before
+public void setup() {
+    evaluator = new WebDriverEvaluator(new FirefoxDriver()) <1>
+    visit 'http://www.google.ca' <2>
+    ...
+}
+-------------------------------------------------------------------------------
+
+<1> You just have to pass an instance of Webdriver to our *WebDriverEvaluator* and set the value
+to **Testatoo.evalator**.
+
+<2> Done, now you can navigate to the site under test
+
+Once Testatoo is initialized and the page under test open. We select the components used for the test.
+
+[source,java]
+-------------------------------------------------------------------------------
+@Before
+public void setup() {
+    ...
+
+    searchField = $('#lst-ib') as TextField
+    searchButton = $('#sblsbb button') as Button
+    resultList = $('#rso') as GoogleListView
+}
+-------------------------------------------------------------------------------
+
+As you can see Testatoo don't work like other UI test framework with anonymous elements but with
+strongly typed Components.
+
+Testatoo provide by default all the HTML5 components and allow you to add and define easily you own components.
+In the sample two components are standard (HTML5): the TextField and the Button.
+
+The framework test for you if the selected component has the expected type. So if you define a Radio as expected element
+and you page under test contains a checkbox the test fail. So you can not only test the functional aspect of you page
+but also it's semantic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
