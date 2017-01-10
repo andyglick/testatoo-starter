@@ -1,7 +1,7 @@
 = Testatoo Starter
 
 [.left.text-left]
-image::https://github.com/Ovea/testatoo/blob/master/src/doc/images/logo.jpg[]
+image::https://github.com/Ovea/testatoo-starter/blob/master/src/main/asciidoc/images/logo.jpg[]
 
 == Building
 

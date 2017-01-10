@@ -1,0 +1,7 @@
+== Introduction
+
+'''
+The main purpose of this tutorial is to give you the way and the philosophy under Testatoo.
+As explained in the full documentation Testatoo is a strongly opinionated tool.
+
+We take care through this tutorial to give you a full vision of the Testatoo way.
