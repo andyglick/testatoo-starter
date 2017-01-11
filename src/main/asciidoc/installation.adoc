@@ -1,0 +1,43 @@
+== Installation
+
+'''
+Clone the https://github.com/Ovea/testatoo-starter[Testatoo Starter, window="_blank"] sample from github.
+
+As you can see it's a simple Java/Groovy/Maven project setup. The pom just import necessary libraries
+
+[source, xml, subs="normal"]
+-------------------------------------------------------------------------------
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+   <groupId>org.testatoo</groupId>
+   <artifactId>testatoo</artifactId>
+   <version>2.0.b26</version>
+   <scope>test</scope>
+</dependency>
+-------------------------------------------------------------------------------
+
+Testatoo is build on top of Selenium 3: definitively turned to the future.
+
+=== Run with locale Chrome
+
+ 1. Install https://www.google.com/chrome/[Google chrome, window="_blank"]
+
+ 2. Install the driver https://sites.google.com/a/chromium.org/chromedriver/[Chrome Driver]
+
+ 3. Run the test with *mvn test -Ddriver='your driver location'*  (by default */usr/bin*)
+
+=== Run with remote Chrome
+
+Nobody love to be bored by a browser who pop when he run a test.
+It's a good practice in development to use a remote dockerised browser.
+
+ 1. Install https://docs.docker.com/engine/installation/[Docker, window="_blank"]
+
+ 2. Run the docker container: *docker run -d -p 4444:4444 selenium/standalone-chrome:3.0.1-aluminum*
+
+ 3. Run the test with *mvn test -Ddocker*

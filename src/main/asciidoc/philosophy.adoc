@@ -1,0 +1,56 @@
+= Philosophy
+
+'''
+
+Now take a look on the test.
+
+[source,groovy,linenums]
+[subs="verbatim,attributes"]
+----
+include::{basepath}/test/groovy/starter/GoogleSearchTest.groovy[]
+----
+
+<1> Always externalise the Webdriver configuration. Here we added a JUnit class rule to manage the Webdriver
+configuration and lifecycle (see source for details).
+
+<2> As possible use a factory to fetch your UI component
+
+<3> Look how it's easy in Testatoo to fill fields
+
+Ok now take a closer look on the test. The goal of the test is simple: *open google and search for GROOVY*.
+
+Here what we want is simple.
+
+ 1. *GIVEN* the search field is visible and the result list is not here.
+
+ 2. *WHEN* we enter the word groovy in the search field and press enter
+
+ 3. *THEN* we expect that the result list is here and contain a result with the expected item.
+
+NOTE: A test is an intention and need to express an intention.
+Testatoo is build around this idea. Write a test the more
+abstract possible who capture the intention.
+
+
+What is the *searchFile*? The search field is, in this case, a simple HTML5 input text field. But we don't
+want to use it as a detail (as a InputTypeText) but through it's abstraction: A *TextField*.
+
+What is the *resultList*? Hummm it's more complicated here. In fact it's a list of items. Pretty close of
+what you can find in HTML5 with UL/LI or OL/LI tags. But in this case it's a soup of div of div.
+
+All this details are hidden in the Factory class.
+
+[source,groovy,linenums]
+[subs="verbatim,attributes"]
+----
+include::{basepath}/test/groovy/starter/component/Factory.groovy[]
+----
+
+
+
+If the implementation of your application change the test stay the same you just need to update the factory.
+In Testatoo everything is a Component. Testatoo provide you the HTML5 bundle with all the HTML5 Component.
+But more important Testatoo give you the possibility to create you own component.
+
+This is the cas here we create two component:
+GoogleListView
