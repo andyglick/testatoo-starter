@@ -39,7 +39,7 @@
     </scm>
 
     <properties>
-        <testatoo.version>2.0.b26-SNAPSHOT</testatoo.version>
+        <testatoo.version>2.0.b26</testatoo.version>
         <jdk.version>1.7</jdk.version>
         <selenium.version>3.0.1</selenium.version>
         <groovy.version>2.3.6</groovy.version>
@@ -138,12 +138,6 @@
             <groupId>org.testatoo</groupId>
             <artifactId>testatoo</artifactId>
             <version>${testatoo.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

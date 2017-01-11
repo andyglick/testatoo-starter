@@ -16,20 +16,14 @@ As you can see it's a simple Java/Groovy/Maven project setup. The pom just impor
 <dependency>
    <groupId>org.testatoo</groupId>
    <artifactId>testatoo</artifactId>
-   <version>2.0.X</version>
+   <version>2.0.b26</version>
    <scope>test</scope>
-</dependency>
-<dependency>
-  <groupId>org.seleniumhq.selenium</groupId>
-  <artifactId>selenium-java</artifactId>
-  <version>3.0.X</version>
-  <scope>test</scope>
 </dependency>
 -------------------------------------------------------------------------------
 
 Testatoo is build on top of Selenium 3: definitively turned to the future.
 
-=== Run test with locale Chrome
+=== Run with locale Chrome
 
  1. Install https://www.google.com/chrome/[Google chrome, window="_blank"]
 
@@ -37,7 +31,7 @@ Testatoo is build on top of Selenium 3: definitively turned to the future.
 
  3. Run the test with *mvn test -Ddriver='your driver location'*  (by default */usr/bin*)
 
-=== Run test with remote Chrome
+=== Run with remote Chrome
 
 Nobody love to be bored by a browser who pop when he run a test.
 It's a good practice in development to use a remote dockerised browser.

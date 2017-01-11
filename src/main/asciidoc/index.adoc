@@ -1,6 +1,6 @@
 = Testatoo Getting Started
 :author: David Avenante, Stephanie Parisot
-:revnumber: 2.0.0
+:revnumber: 2.0.b26
 :toc: left
 :toclevels: 5
 :numbered: true
@@ -10,8 +10,6 @@
 :desc: This is the Testatoo getting started
 :imagesdir: images
 :basepath: ../..
-:junit-version: 4.12
-:selenium-version: 3.0.1
 :testato-version: 2.0.b26
 
 image::logo.svg[Testatoo,align="center"]
